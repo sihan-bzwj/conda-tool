@@ -1,134 +1,101 @@
-# Conda 一站式清理与管理工具 / Conda All-in-One Cleanup & Management Tool
+```
+# 🛠️ Conda All-in-One Cleanup & Management Tool 
 
-[中文](#中文) | [English](#english)
+[![Python](https://img.shields.io/badge/Python-3.6+-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
----
+> A concise and powerful command-line utility for safely cleaning Anaconda cache and managing virtual environments. 
+> 
+> 一个简洁高效的命令行工具，专为安全清理 Anaconda 缓存与管理虚拟环境而设计。
 
-## 中文
-
-### 简介
-
-一个简洁的命令行工具，用于安全清理Anaconda缓存和管理虚拟环境。支持中英文双语界面。
-
-### 功能特点
-
-- 🧹 **一键安全清理缓存**：清理Conda和Pip的缓存文件，不删除任何环境
-- 📁 **查看与管理环境**：列出所有Conda环境，并可安全删除（保护base环境）
-- 📊 **查看磁盘占用**：快速分析Anaconda目录的空间使用情况
-- 🌐 **双语支持**：支持中文和英文界面，可随时切换
-
-### 安装与使用
-
-1. **前提条件**
-
-   - 已安装Anaconda或Miniconda
-   - Python 3.6 或更高版本
-2. **下载与运行**
-
-   ```bash
-   # 克隆仓库或下载脚本
-   git clone https://github.com/yourusername/conda-tool.git
-   cd conda-tool
-
-   # 运行工具
-   python conda_tool.py
-
-   ```
-
-3. **首次运行**
-
-   - 程序会自动检测系统语言
-   - 可在主菜单中选择选项4切换语言
-   - 语言选择会保存，下次启动自动应用
-
-### 使用说明
-
-1. **一键清理缓存**（选项1）
-
-   - 安全清理所有缓存文件
-   - 不会删除任何虚拟环境
-2. **环境管理**（选项2）
-
-   - 查看所有Conda环境
-   - 选择序号删除不需要的环境
-   - 自动保护base环境和当前使用环境
-3. **磁盘分析**（选项3）
-
-   - 查看envs和pkgs目录大小
-   - 识别占用空间的主要目录
-
-### 注意事项
-
-- 删除环境前请确认，操作不可逆
-- 建议在Anaconda Prompt中运行此脚本
-- base环境受保护，无法删除
-- 无法删除当前正在使用的环境
-
-### 贡献
-
-欢迎提交Issue和Pull Request！
+🌍 **Languages:** [中文文档](#-中文文档) | [English Documentation](#-english-documentation)
 
 ---
 
-## English
+## 🇨🇳 中文文档
 
-### Introduction
+### 💡 简介
+本工具旨在解决 Conda 环境臃肿与多环境管理痛点。通过全交互式终端菜单，提供缓存清理、环境增删及磁盘扫描功能，内置安全保护机制，确保您的工作环境数据安全。
 
-A concise command-line tool for safely cleaning Anaconda cache and managing virtual environments. Supports bilingual interface (Chinese/English).
+### ✨ 核心功能
+* 🧹 **一键安全清理**：深度清除 Conda 与 Pip 的冗余缓存文件，**绝对不触碰**任何已有虚拟环境。
+* 📁 **可视化环境总管**：清晰列出所有 Conda 环境并支持按序号一键删除。内置**防误删保护机制**（严禁删除 `base` 根环境及当前激活的环境）。
+* 📊 **磁盘空间体检**：秒级扫描并分析 `envs` 和 `pkgs` 核心目录，精准定位磁盘空间占用大户。
+* 🌐 **无缝双语切换**：原生支持中英双语，一键切换并自动持久化记忆用户偏好。
 
-### Features
+### 🚀 安装与使用
 
-- 🧹 **Safe One-click Cache Cleanup**: Clean Conda and Pip cache files without deleting any environments
-- 📁 **View & Manage Environments**: List all Conda environments and safely delete them (base environment protected)
-- 📊 **Check Disk Usage**: Quickly analyze space usage of Anaconda directories
-- 🌐 **Bilingual Support**: Chinese and English interface, switchable at any time
+#### 前提条件
+* 已正确安装 Anaconda 或 Miniconda
+* Python 3.6 或更高版本
 
-### Installation & Usage
+#### 快速启动
+建议在 **Anaconda Prompt** 或已配置 Conda 环境变量的终端中执行以下命令：
 
-1. **Prerequisites**
+```bash
+# 1. 克隆仓库或下载源码
+git clone [https://github.com/sihan-bzwj/conda-tool.git](https://github.com/sihan-bzwj/conda-tool.git)
+cd conda-tool
 
-   - Anaconda or Miniconda installed
-   - Python 3.6 or higher
-2. **Download & Run**
-   bash
+# 2. 运行工具
+python conda_tool.py
+```
 
-   ```
-   # Clone repository or download script
-   git clone https://github.com/yourusername/conda-tool.git
-   cd conda-tool
+*注：首次运行时，程序会自动检测系统语言。您也可通过主菜单的“选项 4”手动切换，配置将在下次启动时自动生效。*
 
-   # Run the tool
-   python conda_tool_bilingual.py
-   ```
-3. **First Run**
+### ⚠️ 注意事项
 
-   - Program auto-detects system language
-   - Switch language via option 4 in main menu
-   - Language preference is saved for future sessions
+1. **操作不可逆**：删除虚拟环境前请务必仔细核对环境名称。
+2. **环境锁定**：受保护的 `base` 环境及当前正在使用的环境无法通过此工具删除。若需删除当前环境，请先 `conda activate` 切换至其他环境。
 
-### Usage Guide
+### 🤝 参与贡献
 
-1. **One-click Cache Cleanup** (Option 1)
+欢迎提交 Issue 报告 Bug，或发起 Pull Request 提供功能改进！
 
-   - Safely clean all cache files
-   - No virtual environments will be deleted
-2. **Environment Management** (Option 2)
+---
 
-   - View all Conda environments
-   - Delete unnecessary environments by number
-   - Automatic protection for base and current environment
-3. **Disk Analysis** (Option 3)
+## 🇬🇧 English Documentation
 
-   - Check size of envs and pkgs directories
-   - Identify space-consuming directories
+### 💡 Introduction
 
-### Important Notes
+A lightweight, interactive command-line utility designed to solve Anaconda cache bloat and simplify virtual environment management. It offers a secure way to free up disk space and manage environments through an intuitive menu system.
 
-- Confirm before deleting environments, operation is irreversible
-- Recommended to run in Anaconda Prompt
-- Base environment is protected from deletion
-- Cannot delete currently active environment
+### ✨ Features
 
-### Contributing
+- 🧹 **Safe Cache Cleanup:**  One-click purge of Conda and Pip cache files with **zero risk** to your existing virtual environments.
+- 📁 **Environment Manager:**  Visually list and selectively remove unused Conda environments. Includes **built-in safeguards** (the `base` environment and the currently active environment are strictly protected from deletion).
+- 📊 **Disk Analysis:**  Rapidly scan the `envs` and `pkgs` directories to identify the primary sources of disk space consumption.
+- 🌐 **Bilingual UI:**  Native English and Chinese support with persistent preference saving across sessions.
 
-Issues and Pull Requests are welcome!
+### 🚀 Installation & Usage
+
+#### Prerequisites
+
+- Anaconda or Miniconda installed
+- Python 3.6 or higher
+
+#### Quick Start
+
+It is highly recommended to run this script within the **Anaconda Prompt** or a terminal where Conda is initialized:
+
+Bash
+
+```
+# 1. Clone the repository or download the script
+git clone [https://github.com/sihan-bzwj/conda-tool.git](https://github.com/sihan-bzwj/conda-tool.git)
+cd conda-tool
+
+# 2. Run the tool
+python conda_tool.py
+```
+
+*Note: On the first run, the program auto-detects your system language. You can manually switch languages via Option 4 in the main menu, and your preference will be saved for future sessions.*
+
+### ⚠️ Important Notes
+
+1. **Irreversible Actions:**  Please confirm the environment name carefully before proceeding with deletion.
+2. **Environment Locks:**  The `base` environment and your currently active environment are locked. To delete an active environment, you must `conda activate` a different one first.
+
+### 🤝 Contributing
+
+Issues and Pull Requests are warmly welcomed to help improve this tool!
